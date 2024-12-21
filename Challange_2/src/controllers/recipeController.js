@@ -1,26 +1,26 @@
 const Recipe = require("../models/recipeModel");
+const { sendResponse } = require("../helpers/responseHelper");
 
-exports.addRecipe = async (req, res) => {
+exports.addRecipe = async (req, res, next) => {
   const { name, ingredients, instructions, tags } = req.body;
   try {
     const recipe = new Recipe({ name, ingredients, instructions, tags });
     await recipe.save();
-    res.status(201).json({ message: "Recipe added", recipe });
+    sendResponse(res, 201, true, "Recipe added successfully", recipe);
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    next(error);
   }
 };
 
-exports.getRecipes = async (req, res) => {
+exports.getRecipes = async (req, res, next) => {
   const { availableIngredients } = req.query; // Array of ingredient names
   try {
     const recipes = await Recipe.find();
-    const matchingRecipes = recipes.filter((recipe) => {
-      const recipeIngredients = recipe.ingredients.map((ing) => ing.name);
-      return recipeIngredients.every((ing) => availableIngredients.includes(ing));
-    });
-    res.status(200).json(matchingRecipes);
+    const matchingRecipes = recipes.filter((recipe) =>
+      recipe.ingredients.every((ingredient) => availableIngredients.includes(ingredient.name))
+    );
+    sendResponse(res, 200, true, "Matching recipes fetched successfully", matchingRecipes);
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    next(error);
   }
 };

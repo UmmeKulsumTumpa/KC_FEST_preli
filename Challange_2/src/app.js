@@ -1,14 +1,25 @@
-const mongoose = require("mongoose");
+require("dotenv").config();
+const express = require("express");
+const connectDB = require("./database");
+const ingredientRoutes = require("./routes/ingredientRoutes");
+const recipeRoutes = require("./routes/recipeRoutes");
+const chatbotRoutes = require("./routes/chatbotRoutes");
+const { errorHandler } = require("./middlewares/errorHandler");
 
-mongoose.connect(process.env.MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+const app = express();
+app.use(express.json());
 
-mongoose.connection.on("connected", () => {
-  console.log("MongoDB connected successfully.");
-});
+// Connect to Database
+connectDB();
 
-mongoose.connection.on("error", (err) => {
-  console.error("MongoDB connection error:", err);
-});
+// Routes
+app.use("/ingredients", ingredientRoutes);
+app.use("/recipes", recipeRoutes);
+app.use("/chatbot", chatbotRoutes);
+
+// Error Handler
+app.use(errorHandler);
+
+// Start the Server
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));

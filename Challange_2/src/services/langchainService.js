@@ -1,4 +1,4 @@
-const { HuggingFaceHub } = require("langchain/llms/huggingface");
+const { HuggingFaceHub } = require("langchain/integrations/huggingface");
 
 const llm = new HuggingFaceHub({
   repoId: "google/flan-t5-base",
@@ -7,6 +7,5 @@ const llm = new HuggingFaceHub({
 
 exports.queryChatbot = async (userInput) => {
   const prompt = `Given the user's query: "${userInput}", suggest a recipe based on common ingredients.`;
-  const response = await llm.call(prompt);
-  return response;
+  return await llm.call(prompt);
 };

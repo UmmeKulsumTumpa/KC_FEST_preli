@@ -1,10 +1,30 @@
 {
+  "name": "kitchen-buddy",
+  "version": "1.0.0",
+  "description": "A backend system for ingredient management, recipe retrieval, and chatbot integration using Express.js, MongoDB, and LangChain.",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
+  },
+  "keywords": [
+    "express",
+    "mongodb",
+    "langchain",
+    "recipes",
+    "chatbot"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
   "dependencies": {
-    "axios": "^1.7.9",
-    "body-parser": "^1.20.3",
-    "dotenv": "^16.4.7",
-    "express": "^4.21.2",
-    "langchain": "^0.3.7",
-    "mongoose": "^8.9.2"
+    "@huggingface/inference": "^2.0.0", 
+    "axios": "^1.3.5",
+    "dotenv": "^16.1.0",
+    "express": "^4.18.2",
+    "langchain": "^0.0.72",
+    "mongoose": "^7.3.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
   }
 }
