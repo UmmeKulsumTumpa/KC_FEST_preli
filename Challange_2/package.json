@@ -7,21 +7,16 @@
     "start": "node src/app.js",
     "dev": "nodemon src/app.js"
   },
-  "keywords": [
-    "express",
-    "mongodb",
-    "langchain",
-    "recipes",
-    "chatbot"
-  ],
   "author": "Your Name",
   "license": "MIT",
   "dependencies": {
-    "@huggingface/inference": "^2.0.0", 
-    "axios": "^1.3.5",
+    "@huggingface/inference": "^2.8.1",
+    "@huggingface/transformers": "^3.2.1",
+    "@langchain/community": "^0.3.19",
+    "@langchain/core": "^0.3.26",
+    "axios": "^1.7.9",
     "dotenv": "^16.1.0",
     "express": "^4.18.2",
-    "langchain": "^0.0.72",
     "mongoose": "^7.3.4"
   },
   "devDependencies": {

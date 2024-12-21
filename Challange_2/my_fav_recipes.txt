@@ -1,0 +1,35 @@
+Recipe Name: Pancakes
+Ingredients: Flour, Eggs, Milk
+Taste: Sweet
+Cuisine: Western
+Preparation Time: 20 minutes
+Instructions: Mix and fry.
+Reviews: 4.5/5
+
+Recipe Name: Spaghetti
+Ingredients: Pasta, Tomato Sauce, Garlic
+Taste: Savory
+Cuisine: Italian
+Preparation Time: 30 minutes
+Instructions: Boil pasta, cook sauce, mix together.
+Reviews: 4.7/5
+
+Spaghetti Carbonara
+Ingredients:
+- 200g spaghetti
+- 100g pancetta
+- 2 large eggs
+- 50g grated Parmesan cheese
+- 2 cloves garlic, minced
+- Salt and pepper to taste
+- 1 tbsp olive oil
+
+Instructions:
+1. Cook the spaghetti according to the package instructions. Reserve some pasta water.
+2. Heat olive oil in a pan over medium heat. Add pancetta and cook until crispy.
+3. Add garlic to the pan and sauté for 1-2 minutes.
+4. In a bowl, whisk together eggs and Parmesan cheese.
+5. Combine cooked spaghetti with pancetta and garlic. Remove from heat.
+6. Quickly mix the egg and cheese mixture with the pasta, adding a little reserved pasta water to create a creamy sauce.
+7. Season with salt and pepper, and serve immediately.
+

@@ -9,17 +9,13 @@ const { errorHandler } = require("./middlewares/errorHandler");
 const app = express();
 app.use(express.json());
 
-// Connect to Database
 connectDB();
 
-// Routes
 app.use("/ingredients", ingredientRoutes);
 app.use("/recipes", recipeRoutes);
 app.use("/chatbot", chatbotRoutes);
 
-// Error Handler
 app.use(errorHandler);
 
-// Start the Server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
